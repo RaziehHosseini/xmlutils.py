@@ -69,7 +69,7 @@ class xml2csv:
         # iterate through the xml
         for event, elem in self.context:
             # if elem is an unignored child node of the record tag, it should be written to buffer
-            should_write = elem.tag != tag and started and elem.tag not in ignore
+            should_write = elem.tag != tag and started and elem.tag != ignore
             # and if a header is required and if there isn't one
             should_tag = not tagged and should_write and not noheader
 
